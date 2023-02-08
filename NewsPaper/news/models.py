@@ -45,6 +45,9 @@ class Post(models.Model):
     text = models.TextField()
     rating_post = models.SmallIntegerField(default=0)
 
+    def __str__(self):
+        return ({self.header_post},{self.text},{self.time_add})
+
     def like(self):
         self.rating_post += 1
         self.save()
